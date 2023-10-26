@@ -5,30 +5,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from "@angular/forms";
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from "@angular/material/input";
-import { MatIconModule } from "@angular/material/icon";
-import { MatButtonModule } from "@angular/material/button";
-import { MatBadgeModule } from "@angular/material/badge";
-import { MatCardModule } from "@angular/material/card";
-import {MatDividerModule} from '@angular/material/divider';
+import { ContatoCadastrarComponent } from './shared/contato/contato-cadastrar/contato-cadastrar.component';
+import { ContatoListarComponent } from './shared/contato/contato-listar/contato-listar.component';
+import { AngularMaterialModule } from './shared/angular-material/angular-material.module';
+import { MenuComponent } from './shared/menu/menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContatoCadastrarComponent,
+    ContatoListarComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatBadgeModule,
     BrowserAnimationsModule,
-    MatDividerModule
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

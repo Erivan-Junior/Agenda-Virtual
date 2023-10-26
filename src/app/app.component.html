@@ -1,54 +1,9 @@
+<app-menu></app-menu>
 <div id="main">
 
   <h1>{{title}}</h1>
   <h2>{{subtitle}}</h2>
 
-  <div id="form">
-
-    <mat-form-field class="campo">
-      <h3>Nome:</h3>
-      <input matInput [(ngModel)]="newContato.nome" placeholder="Digite o nome do novo Contato">
-    </mat-form-field>
-
-    <mat-form-field class="campo">
-      <h3>Número:</h3>
-      <input matInput [(ngModel)]="newContato.numero" placeholder="Digite o número do novo Contato">
-    </mat-form-field>
-
-    <mat-form-field class="campo">
-      <h3>Descrição:</h3>
-      <textarea matInput [(ngModel)]="newContato.descricao" placeholder="Escreva uma pequena descrição sobre seu novo contato"></textarea>
-    </mat-form-field>
-
-    <button mat-mini-fab aria-label="Cadastrar" (click)="create()">
-      <mat-icon fontIcon="add">+</mat-icon>
-    </button>
-    <div id="erro">
-      <h3>{{erro}}</h3>
-    </div>
-
-  </div>
-
-  <div id="agenda">
-    <mat-card *ngFor="let contato of contatosRepo">
-      <mat-divider></mat-divider>
-      <mat-card-header>
-        <mat-card-title><h3>Nome: {{contato.nome}}</h3></mat-card-title>
-        <mat-card-subtitle><h3>Número: </h3>{{contato.numero}}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{contato.descricao}}</p>
-      </mat-card-content>
-      <mat-card-actions align="start">
-        <button mat-mini-fab aria-label="Editar" (click)="update(contato)">
-          <mat-icon fontIcon="edit">+</mat-icon>
-        </button>
-        <button mat-mini-fab aria-label="Remover" (click)="delete(contato)">
-          <mat-icon fontIcon="delete">+</mat-icon>
-        </button>
-      </mat-card-actions>
-      <mat-divider></mat-divider>
-    </mat-card>
-  </div>
+  <router-outlet></router-outlet>
 
 </div>

@@ -1,0 +1,26 @@
+<div id="agenda">
+    <h2 *ngIf="tamanho()==0">Não há contatos na sua Agenda</h2>
+    <mat-card *ngFor="let contato of contatosRepo">
+        <mat-divider></mat-divider>
+        <mat-card-header>
+            <mat-card-title>
+                <h3>Nome: {{contato.nome}}</h3>
+            </mat-card-title>
+            <mat-card-subtitle>
+                <h3>Número: </h3>{{contato.numero}}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{contato.descricao}}</p>
+        </mat-card-content>
+        <mat-card-actions align="start">
+            <button class="mat-button" mat-mini-fab aria-label="Editar" (click)="update(contato)">
+                <mat-icon fontIcon="edit">+</mat-icon>
+            </button>
+            <button class="mat-button" mat-mini-fab aria-label="Remover" (click)="delete(contato)">
+                <mat-icon fontIcon="delete">+</mat-icon>
+            </button>
+        </mat-card-actions>
+        <mat-divider></mat-divider>
+    </mat-card>
+</div>
